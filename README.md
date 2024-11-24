@@ -43,4 +43,18 @@ Facts: **SalesOrder, Product**
 
 #### 2. ETL
 
+**Data Flow**
+
+<img src="images/Flow.jpg">
+
+**Staging**
+
+- Load Staging from data source (AdventureWorks2012)
+
+<img src="images/LoadStaging1.PNG">
+
+<img src="images/LoadStaging2.PNG">
+
+<img src="images/LoadStaging3.PNG">
+
 ### III.	Create Dashboard with PowerBI
