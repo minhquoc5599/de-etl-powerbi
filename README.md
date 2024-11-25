@@ -57,4 +57,8 @@ Facts: **SalesOrder, Product**
 
 <img src="images/LoadStaging3.PNG">
 
+- Transform data into dim, fact tables of Staging area
+
+<img src="images/transform.PNG">
+
 ### III.	Create Dashboard with PowerBI
