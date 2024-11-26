@@ -27,7 +27,7 @@ ADD CONSTRAINT FK_Dim_Date_Dim_Month_MonthKey
 FOREIGN KEY (MonthKey) REFERENCES Dim_Month(MonthKey)
 
 CREATE TABLE Dim_SalesPerson (
-	BusinessEntityID INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	BusinessEntityID INT NOT NULL PRIMARY KEY,
 	Title NVARCHAR(8) NULL,
 	FullName NVARCHAR(500) NULL,
 	NationalIDNumber NVARCHAR(15) NULL,
@@ -38,19 +38,19 @@ CREATE TABLE Dim_SalesPerson (
 )
 
 CREATE TABLE Dim_Territory (
-	TerritoryID INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	TerritoryID INT NOT NULL PRIMARY KEY,
 	Name NVARCHAR(50) NULL,
 	CountryRegionCode NVARCHAR(3) NULL,
 	[Group] NVARCHAR(50) NULL
 )
 
 CREATE TABLE Dim_ProductCategory (
-	ProductCategoryID INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	ProductCategoryID INT NOT NULL PRIMARY KEY,
 	Name NVARCHAR(50) NOT NULL
 )	
 
 CREATE TABLE Dim_ProductSubcategory (
-	ProductSubcategoryID INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	ProductSubcategoryID INT NOT NULL PRIMARY KEY,
 	ProductCategoryID INT NOT NULL,
 	Name NVARCHAR(50) NOT NULL
 )
@@ -60,7 +60,7 @@ ADD CONSTRAINT FK_Dim_ProductSubcategory_Dim_ProductCategory_ProductCategoryID
 FOREIGN KEY (ProductCategoryID) REFERENCES Dim_ProductCategory(ProductCategoryID)
 
 CREATE TABLE Dim_Product (
-	ProductID INT IDENTITY(1, 1) NOT NULL PRIMARY KEY,
+	ProductID INT NOT NULL PRIMARY KEY,
 	Name NVARCHAR(50) NOT NULL,
 	ProductNumber NVARCHAR(25) NOT NULL,
 	StandardCost MONEY NOT NULL,
@@ -79,8 +79,8 @@ CREATE TABLE Fact_SalesOrder (
 	DateKey NVARCHAR(8) NOT NULL,
 	TerritoryID INT NULL,
 	SalesPersonID INT NULL,
-	Revenue DECIMAL(18, 4) NOT NULL,
-	NumberOrder INT NOT NULL
+	Revenue MONEY NOT NULL,
+	NumberOrder NUMERIC(20, 0) NOT NULL
 )
 
 ALTER TABLE Fact_SalesOrder
@@ -100,7 +100,7 @@ CREATE TABLE Fact_Product (
 	DateKey NVARCHAR(8) NOT NULL,
 	ProductID INT NOT NULL,
 	TerritoryID INT NULL,
-	Qty INT NOT NULL
+	Qty SMALLINT NOT NULL
 )
 
 ALTER TABLE Fact_Product

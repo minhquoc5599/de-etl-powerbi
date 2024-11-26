@@ -59,6 +59,30 @@ Facts: **SalesOrder, Product**
 
 - Transform data into dim, fact tables of Staging area
 
-<img src="images/transform.PNG">
+<img src="images/Transform.PNG">
+
+- Load dimension tables from Staging to Data Warehouse
+
+<img src="images/LoadDimDW1.PNG">
+
+<img src="images/LoadDimDW2.PNG">
+
+<img src="images/LoadDimDW3.PNG">
+
+<img src="images/LoadDimDW4.PNG">
+
+<img src="images/LoadDimDW5.PNG">
+
+<img src="images/LoadDimDW6.PNG">
+
+<img src="images/LoadDimDW7.PNG">
+
+- Load fact tables from Staging to Data Warehouse
+
+<img src="images/LoadFactDW.PNG">
+
+- Truncate dimension, fact tables of Staging area
+
+<img src="images/TruncateStag.PNG">
 
 ### III.	Create Dashboard with PowerBI
