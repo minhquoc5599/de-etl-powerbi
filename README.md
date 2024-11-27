@@ -86,3 +86,5 @@ Facts: **SalesOrder, Product**
 <img src="images/TruncateStag.PNG">
 
 ### III.	Create Dashboard with PowerBI
+
+<img src="images/PowerBI.PNG">
